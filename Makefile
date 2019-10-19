@@ -2,7 +2,7 @@
 #
 # --- constants
 FORTRAN=gfortran
-FFLAGS=-g -O2 -Wline-truncation -Wsurprising -Werror
+FFLAGS=-g -O2 -Wline-truncation
 BIN=.
 EXEC=.
 SRC=.
@@ -29,8 +29,8 @@ $(BIN)/close6:	$(FDEPENDS) $(SRC)/close6.for
 $(BIN)/element6:	$(FDEPENDS) $(SRC)/element6.for
 	$(FORTRAN) $(FFLAGS) -o $(BIN)/element6 $(SRC)/element6.for
 
-$(BIN)/mercury6:	$(FDEPENDS) $(SRC)/mercury6_2.for
-	$(FORTRAN) $(FFLAGS) -o $(BIN)/mercury6 $(SRC)/mercury6_2.for
+$(BIN)/mercury6:	$(FDEPENDS) $(SRC)/mercury6_2.f95
+	$(FORTRAN) $(FFLAGS) -o $(BIN)/mercury6 $(SRC)/mercury6_2.f95
 
 # --- Remove executable files
 unbuild:
